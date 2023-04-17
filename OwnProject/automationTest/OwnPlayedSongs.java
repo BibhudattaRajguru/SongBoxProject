@@ -22,7 +22,7 @@ public class OwnPlayedSongs {
 	    	WebDriverManager.chromedriver().setup();
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			driver.get("http://localhost:8080"); 
+			driver.get("Url For songs"); 
 			driver.manage().window().maximize();
 
 	        SongTOplay("user1", "S1");
@@ -50,12 +50,15 @@ public class OwnPlayedSongs {
 	    }
 
 	    public static void SongTOplay(String user, String song) {
+	    	//identifying the User
 	        WebElement userE = driver.findElement(By.id("user"));
 	        userE.sendKeys(user);
-
+	        
+	        //identifying the songs
 	        WebElement songE = driver.findElement(By.id("song"));
-	        songE.sendKeys(song);
-
+	        songE.sendKeys(song);	
+	      
+	        //Click on play
 	        WebElement playButton = driver.findElement(By.id("play"));
 	        playButton.click();
 
